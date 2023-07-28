@@ -16,10 +16,10 @@ const Drivers = () => {
       setDrivers(
         resp.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
       );
+      setLoading(false);
     } catch (error) {
       console.log('error: ', error);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Drivers = () => {
                 <li key={driver.Driver.driverId} className="driver">
                   <div className="driver-image">
                     <img
-                      src={`/src/assets/images/drivers/${driver.Driver.code}.jpg`}
+                      src={`/assets/images/drivers/${driver.Driver.code}.jpg`}
                       alt={`${driver.Driver.givenName} ${driver.Driver.familyName}`}
                     />
                   </div>

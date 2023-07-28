@@ -16,10 +16,10 @@ const Latest = () => {
       const data = resp.data.MRData.RaceTable.Races[0];
 
       setResult(data);
+      setLoading(false);
     } catch (error) {
       console.log('error: ', error);
     }
-    setLoading(false);
   };
 
   useEffect(() => {

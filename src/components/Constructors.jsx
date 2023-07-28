@@ -19,10 +19,10 @@ const Constructors = () => {
 
       setConstructors(data);
       setMaxPoints(data[0].points);
+      setLoading(false);
     } catch (error) {
       console.log('error: ', error);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
