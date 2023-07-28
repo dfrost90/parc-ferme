@@ -23,7 +23,7 @@ const Drivers = () => {
   };
 
   useEffect(() => {
-    fetchDrivers(`${CURRENT_DRIVERS_STND_URL}?limit=10`);
+    fetchDrivers(`${CURRENT_DRIVERS_STND_URL}`);
   }, []);
 
   return (

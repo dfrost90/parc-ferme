@@ -7,11 +7,7 @@ const ShowMore = ({ funcOnClick, showMoreVal }) => {
   };
   return (
     <Wrapper>
-      {funcOnClick && showMoreVal ? (
-        <a className="btn btn-link" href="#">
-          show all
-        </a>
-      ) : (
+      {funcOnClick && !showMoreVal && (
         <button className="btn-link" type="button" onClick={handleClick}>
           show more
         </button>
