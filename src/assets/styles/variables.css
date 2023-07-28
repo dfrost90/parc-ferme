@@ -1,0 +1,37 @@
+:root {
+  --border-radius: 16px;
+  --font-size: 10px;
+  --box-shadow: 0 0 16px 0 #00000044;
+  --transition: all 0.3s ease-in-out;
+
+  --palette-1: #faf7fd;
+  --palette-2: #917acf;
+  --palette-3: #c594c2;
+  --palette-4: #b8d6fe;
+  --palette-5: #af8ac9;
+  --palette-6: #1e1551;
+  --palette-7: #ca769f;
+  --palette-8: #438597;
+  --palette-9: #58409a;
+
+  --palette-ferrari-1: #f91536;
+  --palette-ferrari-2: #fca1ae;
+  --palette-mercedes-1: #2546a2;
+  --palette-mercedes-2: #6cd3bf;
+  --palette-red_bull-1: #e21b4d;
+  --palette-red_bull-2: #1d19ac;
+  --palette-aston_martin-1: #efff44;
+  --palette-aston_martin-2: #358c75;
+  --palette-mclaren-1: #003cff;
+  --palette-mclaren-2: #f58020;
+  --palette-alpine-1: #02192b;
+  --palette-alpine-2: #2293d1;
+  --palette-williams-1: #1b5f6e;
+  --palette-williams-2: #37bedd;
+  --palette-haas-1: #000000;
+  --palette-haas-2: #b6babd;
+  --palette-alfa-1: #ffffff;
+  --palette-alfa-2: #c92d4b;
+  --palette-alphatauri-1: #000b1b;
+  --palette-alphatauri-2: #5e8faa;
+}

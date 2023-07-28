@@ -1,0 +1,73 @@
+button,
+.btn {
+  border: 2px solid;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--palette-9);
+  border-color: transparent;
+  border-radius: calc(var(--border-radius) / 2);
+}
+
+.btn-primary:hover {
+  background-color: var(--palette-2);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-alt {
+  background-color: transparent;
+  border-radius: calc(var(--border-radius) / 2);
+  color: var(--palette-2);
+}
+
+.btn-alt:hover {
+  background-color: var(--palette-2);
+  border-color: var(--palette-2);
+  box-shadow: var(--box-shadow);
+  color: var(--palette-1);
+}
+
+.btn-secondary {
+  background-color: var(--palette-7);
+  border-color: transparent;
+  border-radius: calc(var(--border-radius) / 2);
+}
+
+.btn-secondary:hover {
+  background-color: var(--palette-3);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-link {
+  background: 0;
+  border: 0;
+  color: var(--palette-8);
+  padding: 0 0 2px;
+  position: relative;
+}
+
+.btn-link:hover {
+  color: var(--palette-8);
+}
+
+.btn-link::after {
+  background: linear-gradient(90deg, var(--palette-8) 50%, transparent 50%);
+  background-size: 12px 2px;
+  background-repeat: repeat-x;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.btn-link:hover::after {
+  animation: border-dance 3s infinite linear;
+}
