@@ -1,9 +1,9 @@
+import { LAST_RESULTS_URL } from '../../utils/constants';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
-import { LatestWrapper as Wrapper } from './wrappers';
+import { LatestWrapper as Wrapper } from '../wrappers';
 import axios from 'axios';
 import moment from 'moment/moment';
-import { LAST_RESULTS_URL } from '../utils/constants';
 import BounceLoader from 'react-spinners/BounceLoader';
 
 const Latest = () => {

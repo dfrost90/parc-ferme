@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { PointsWrapper, ConstructorsWrapper as Wrapper } from './wrappers';
-
-import { GiRaceCar } from 'react-icons/gi';
 import axios from 'axios';
-import { CURRENT_CONSTRUCTORS_STND_URL } from '../utils/constants';
-import Loading from './Loading';
+import { GiRaceCar } from 'react-icons/gi';
+import { CURRENT_CONSTRUCTORS_STND_URL } from '../../../utils/constants';
+import { useEffect, useState } from 'react';
+import { PointsWrapper, ConstructorsWrapper as Wrapper } from '../../wrappers';
+
+import Loading from './../../common/Loading';
 
 const Constructors = () => {
   const [loading, setLoading] = useState(true);

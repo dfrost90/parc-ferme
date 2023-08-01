@@ -16,6 +16,7 @@ const DriversWrapper = styled.section`
 
   .driver {
     align-items: center;
+    color: var(--palette-6);
     display: flex;
     padding: 12px 20px;
     transition: var(--transition);

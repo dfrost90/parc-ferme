@@ -17,6 +17,10 @@ const LogoWrapper = styled.div`
     width: auto;
   }
 
+  a {
+    color: var(--palette-1);
+  }
+
   svg {
     animation: spinner 20s infinite linear;
   }

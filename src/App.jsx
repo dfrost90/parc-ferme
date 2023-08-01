@@ -1,19 +1,23 @@
-import Loading from './components/Loading';
-import Latest from './components/Latest';
-import Footer from './components/Footer';
-import Drivers from './components/Drivers';
-import Constructors from './components/Constructors';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import SharedLayout from './components/SharedLayout';
+import HomePage from './components/pages/home/HomePage';
+import DriverPage from './components/pages/driver/DriverPage';
+import ErrorPage from './components/pages/ErrorPage';
 
 function App() {
   return (
-    <main className="container">
-      <Latest />
-      <div className="content">
-        <Drivers />
-        <Constructors />
-      </div>
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="driver">
+            <Route path=":id" element={<DriverPage />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

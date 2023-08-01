@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import { ShowMoreWrapper as Wrapper } from './wrappers';
+import { ShowMoreWrapper as Wrapper } from '../wrappers';
 
 const ShowMore = ({ funcOnClick, showMoreVal }) => {
   const handleClick = () => {
