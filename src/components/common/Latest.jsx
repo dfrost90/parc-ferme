@@ -1,29 +1,22 @@
+import moment from 'moment/moment';
 import { LAST_RESULTS_URL } from '../../utils/constants';
 import { useEffect, useState } from 'react';
+import { fetchData } from './../../utils/helpers';
 import Logo from './Logo';
 import { LatestWrapper as Wrapper } from '../wrappers';
-import axios from 'axios';
-import moment from 'moment/moment';
 import BounceLoader from 'react-spinners/BounceLoader';
 
 const Latest = () => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState(null);
 
-  const fetchResult = async (url) => {
-    try {
-      const resp = await axios.get(url);
-      const data = resp.data.MRData.RaceTable.Races[0];
-
-      setResult(data);
-      setLoading(false);
-    } catch (error) {
-      console.log('error: ', error);
-    }
-  };
-
   useEffect(() => {
-    fetchResult(`${LAST_RESULTS_URL}?limit=3`);
+    (async () => {
+      const data = await fetchData(`${LAST_RESULTS_URL}?limit=3`);
+
+      setResult(data.RaceTable.Races[0]);
+      setLoading(false);
+    })();
   }, []);
 
   return (

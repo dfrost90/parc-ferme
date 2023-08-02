@@ -1,9 +1,8 @@
-import axios from 'axios';
 import { GiRaceCar } from 'react-icons/gi';
-import { CURRENT_CONSTRUCTORS_STND_URL } from '../../../utils/constants';
 import { useEffect, useState } from 'react';
+import { CURRENT_CONSTRUCTORS_STND_URL } from '../../../utils/constants';
 import { PointsWrapper, ConstructorsWrapper as Wrapper } from '../../wrappers';
-
+import { fetchData } from './../../../utils/helpers';
 import Loading from './../../common/Loading';
 
 const Constructors = () => {
@@ -11,22 +10,17 @@ const Constructors = () => {
   const [constructors, setConstructors] = useState([]);
   const [maxPoints, setMaxPoints] = useState(0);
 
-  const fetchConstructors = async (url) => {
-    try {
-      const resp = await axios.get(url);
-      const data =
-        resp.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
-
-      setConstructors(data);
-      setMaxPoints(data[0].points);
-      setLoading(false);
-    } catch (error) {
-      console.log('error: ', error);
-    }
-  };
-
   useEffect(() => {
-    fetchConstructors(`${CURRENT_CONSTRUCTORS_STND_URL}?limit=5`);
+    (async () => {
+      const data = await fetchData(`${CURRENT_CONSTRUCTORS_STND_URL}?limit=5`);
+      setConstructors(
+        data.StandingsTable.StandingsLists[0].ConstructorStandings
+      );
+      setMaxPoints(
+        data.StandingsTable.StandingsLists[0].ConstructorStandings[0].points
+      );
+      setLoading(false);
+    })();
   }, []);
 
   return (

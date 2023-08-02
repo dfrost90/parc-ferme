@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { BiSolidChevronsRight } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { PointsWrapper } from './../../wrappers/';
 
@@ -25,6 +26,9 @@ const DriverRow = ({ Driver, Constructors, points }) => {
           <span className="points-value">{points}</span>
           <span className="points-pts">pts</span>
         </PointsWrapper>
+        <div className="driver-icon">
+          <BiSolidChevronsRight />
+        </div>
       </Link>
     </li>
   );

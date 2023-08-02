@@ -12,6 +12,8 @@ const DriverPageWrapper = styled.div`
   .block {
     flex: 0 1 100%;
     margin: 0;
+    overflow: hidden;
+    position: relative;
   }
 
   .page-aside {
@@ -21,7 +23,7 @@ const DriverPageWrapper = styled.div`
   .page-back {
     color: var(--palette-5);
     display: block;
-    padding: 12px 20px;
+    padding: 12px 0;
     text-align: center;
 
     &:hover {

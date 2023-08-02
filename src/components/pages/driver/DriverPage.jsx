@@ -2,42 +2,36 @@ import { MdOutlineArrowBack } from 'react-icons/md';
 import { Link, useParams } from 'react-router-dom';
 import { DriverPageWrapper as Wrapper } from '../../wrappers';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { DRIVER_INFO } from '../../../utils/constants';
 import Loading from '../../common/Loading';
 import Bio from './Bio';
+import { useDriversContext } from '../../../context/drivers_context';
+import Constructor from './Constructor';
 
 const DriverPage = () => {
   const { id } = useParams();
-  const [loading, setLoading] = useState(true);
+  const { drivers, loadingDrivers: loading } = useDriversContext();
   const [driver, setDriver] = useState(null);
 
-  const fetchInfo = async (url) => {
-    try {
-      const resp = await axios.get(url);
-      const driverData = resp.data;
-
-      setDriver(driverData.MRData.DriverTable.Drivers[0]);
-      setLoading(false);
-    } catch (error) {
-      console.log(`Error: ${error}`);
-    }
-  };
-
   useEffect(() => {
-    fetchInfo(`${DRIVER_INFO}${id}.json`);
-  }, [id]);
+    const findDriver = drivers?.find(
+      (driver) => driver.Driver?.driverId === id
+    );
+    setDriver({
+      ...findDriver?.Driver,
+      constructor: { ...findDriver?.Constructors[0] },
+    });
+  }, [id, drivers]);
 
   return (
     <Wrapper>
       <aside className="page-aside">
         <Link type="button" className="page-back" to="/">
           <MdOutlineArrowBack />
-          <span className="page-back-text">back to home</span>
+          <span className="page-back-text">back</span>
         </Link>
       </aside>
       <section className="block">
-        {loading ? (
+        {loading && !driver ? (
           <>
             <h1 className="section-title">DriverPage</h1>
             <Loading />
@@ -45,9 +39,14 @@ const DriverPage = () => {
         ) : (
           <>
             <h1 className="section-title">
-              {driver.givenName} {driver.familyName.toUpperCase()}
+              {driver?.givenName} {driver?.familyName?.toUpperCase()}
             </h1>
-            <Bio {...driver} />
+            {driver?.constructor && (
+              <>
+                <Bio {...driver} />
+                <Constructor {...driver.constructor} />
+              </>
+            )}
           </>
         )}
       </section>

@@ -8,6 +8,7 @@ import PointsWrapper from './PointsWrapper';
 import ShowMoreWrapper from './ShowMoreWrapper';
 import DriverPageWrapper from './DriverPageWrapper';
 import BioWrapper from './BioWrapper';
+import ConstructorWrapper from './ConstructorWrapper';
 
 export {
   LoadingWrapper,
@@ -20,4 +21,5 @@ export {
   ShowMoreWrapper,
   DriverPageWrapper,
   BioWrapper,
+  ConstructorWrapper,
 };

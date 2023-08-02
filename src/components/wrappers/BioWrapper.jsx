@@ -23,10 +23,23 @@ const BioWrapper = styled.div`
 
   .bio-row {
     margin-bottom: 12px;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
   .bio-row-title {
     font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+  }
+
+  .bio-row-flag {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+    width: 16px;
   }
 `;
 

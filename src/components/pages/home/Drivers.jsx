@@ -5,27 +5,11 @@ import { DriversWrapper as Wrapper } from '../../wrappers';
 import Loading from './../../common/Loading';
 import ShowMore from './../../common/ShowMore';
 import DriverRow from './DriverRow';
+import { useDriversContext } from '../../../context/drivers_context';
 
 const Drivers = () => {
-  const [loading, setLoading] = useState(true);
+  const { drivers, loadingDrivers: loading } = useDriversContext();
   const [showTopTen, setShowTopTen] = useState(false);
-  const [drivers, setDrivers] = useState([]);
-
-  const fetchDrivers = async (url) => {
-    try {
-      const resp = await axios.get(url);
-      setDrivers(
-        resp.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
-      );
-      setLoading(false);
-    } catch (error) {
-      console.log('error: ', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchDrivers(`${CURRENT_DRIVERS_STND_URL}`);
-  }, []);
 
   return (
     <Wrapper className="block">

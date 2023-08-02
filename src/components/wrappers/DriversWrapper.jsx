@@ -32,6 +32,11 @@ const DriversWrapper = styled.section`
     .driver-image {
       border-radius: var(--border-radius);
     }
+
+    .driver-icon {
+      margin-right: 0;
+      opacity: 1;
+    }
   }
 
   .driver-image {
@@ -80,6 +85,14 @@ const DriversWrapper = styled.section`
 
   .driver-points {
     margin-left: auto;
+  }
+
+  .driver-icon {
+    font-size: 3rem;
+    opacity: 0;
+    padding: 12px;
+    margin-right: -54px;
+    transition: var(--transition);
   }
 
   .team-ferrari {

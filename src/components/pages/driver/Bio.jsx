@@ -10,20 +10,32 @@ const Bio = ({
   permanentNumber,
   code,
   url,
+  constructor,
 }) => {
   return (
     <Wrapper className="bio">
       <div className="image-wrapper">
-        <img
-          src={`/assets/images/drivers/${code}.jpg`}
-          alt={`picture of ${givenName} ${familyName}`}
-        />
+        {code && (
+          <img
+            src={`/assets/images/drivers/${code}.jpg`}
+            alt={`picture of ${givenName} ${familyName}`}
+          />
+        )}
       </div>
       <div className="bio-info">
         <BioRow name="Date of Birth" value={dateOfBirth} />
-        <BioRow name="Nationality" value={nationality} />
+        <BioRow
+          name="nationality"
+          value={nationality}
+          nationality={nationality}
+        />
         <BioRow name="Number" value={permanentNumber} />
         <BioRow name="Wiki" value="open link" link={url} />
+        <BioRow
+          name="constructor"
+          value={constructor?.name}
+          nationality={constructor?.nationality}
+        />
       </div>
     </Wrapper>
   );
@@ -37,6 +49,7 @@ Bio.propTypes = {
   permanentNumber: PropTypes.string,
   code: PropTypes.string,
   url: PropTypes.string,
+  constructor: PropTypes.object,
 };
 
 export default Bio;

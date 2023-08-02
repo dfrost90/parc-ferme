@@ -8,7 +8,7 @@ const ShowMore = ({ funcOnClick, showMoreVal }) => {
   return (
     <Wrapper>
       {funcOnClick && !showMoreVal && (
-        <button className="btn-link" type="button" onClick={handleClick}>
+        <button className="btn-alt" type="button" onClick={handleClick}>
           show more
         </button>
       )}
