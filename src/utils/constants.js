@@ -7,4 +7,4 @@ export const LAST_RESULTS_URL =
 export const CURRENT_DRIVERS_STND_URL =
   'https://ergast.com/api/f1/current/driverStandings.json';
 
-export const DRIVER_INFO_URL = 'https://ergast.com/api/f1/drivers/';
+export const DRIVER_INFO_URL = 'https://ergast.com/api/f1/drivers';

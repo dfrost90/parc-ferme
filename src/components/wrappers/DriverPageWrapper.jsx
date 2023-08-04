@@ -9,11 +9,87 @@ const DriverPageWrapper = styled.div`
     flex-wrap: nowrap;
   }
 
-  .block {
+  .content {
+    display: flex;
     flex: 0 1 100%;
-    margin: 0;
+    flex-flow: row wrap;
+  }
+
+  .block {
+    flex: 1 1 100%;
     overflow: hidden;
     position: relative;
+
+    &.aston_martin {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-aston_martin-1)
+      );
+    }
+    &.red_bull {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-red_bull-2)
+      );
+    }
+    &.mercedes {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-mercedes-2)
+      );
+    }
+    &.ferrari {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-ferrari-2)
+      );
+    }
+    &.mclaren {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-mclaren-1)
+      );
+    }
+    &.alpine {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-alpine-2)
+      );
+    }
+    &.williams {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-williams-2)
+      );
+    }
+    &.haas {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-haas-2)
+      );
+    }
+    &.alfa {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-alfa-2)
+      );
+    }
+    &.alphatauri {
+      background: linear-gradient(
+        120deg,
+        var(--palette-1) 41%,
+        var(--palette-alphatauri-2)
+      );
+    }
   }
 
   .page-aside {

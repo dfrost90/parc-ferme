@@ -6,6 +6,7 @@ import Loading from '../../common/Loading';
 import Bio from './Bio';
 import { useDriversContext } from '../../../context/drivers_context';
 import Constructor from './Constructor';
+import DriverChart from './DriverChart';
 
 const DriverPage = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ const DriverPage = () => {
     );
     setDriver({
       ...findDriver?.Driver,
+      points: findDriver?.points,
       constructor: { ...findDriver?.Constructors[0] },
     });
   }, [id, drivers]);
@@ -30,26 +32,30 @@ const DriverPage = () => {
           <span className="page-back-text">back</span>
         </Link>
       </aside>
-      <section className="block">
-        {loading && !driver ? (
-          <>
-            <h1 className="section-title">DriverPage</h1>
-            <Loading />
-          </>
-        ) : (
-          <>
-            <h1 className="section-title">
-              {driver?.givenName} {driver?.familyName?.toUpperCase()}
-            </h1>
-            {driver?.constructor && (
+      <div className="content">
+        <section className={`block ${driver?.constructor.constructorId}`}>
+          {!loading && driver ? (
+            <>
+              <h1 className="section-title">
+                {driver?.givenName} {driver?.familyName?.toUpperCase()}
+              </h1>
               <>
                 <Bio {...driver} />
                 <Constructor {...driver.constructor} />
               </>
-            )}
-          </>
-        )}
-      </section>
+            </>
+          ) : (
+            <>
+              <h1 className="section-title">DriverPage</h1>
+              <Loading />
+            </>
+          )}
+        </section>
+        <section className="block">
+          <h2 className="section-title">career</h2>
+          <DriverChart />
+        </section>
+      </div>
     </Wrapper>
   );
 };

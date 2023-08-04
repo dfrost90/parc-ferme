@@ -10,6 +10,7 @@ const Bio = ({
   permanentNumber,
   code,
   url,
+  points,
   constructor,
 }) => {
   return (
@@ -32,10 +33,11 @@ const Bio = ({
         <BioRow name="Number" value={permanentNumber} />
         <BioRow name="Wiki" value="open link" link={url} />
         <BioRow
-          name="constructor"
+          name="current team"
           value={constructor?.name}
           nationality={constructor?.nationality}
         />
+        <BioRow name="current points" value={points} />
       </div>
     </Wrapper>
   );
@@ -49,6 +51,7 @@ Bio.propTypes = {
   permanentNumber: PropTypes.string,
   code: PropTypes.string,
   url: PropTypes.string,
+  points: PropTypes.string,
   constructor: PropTypes.object,
 };
 

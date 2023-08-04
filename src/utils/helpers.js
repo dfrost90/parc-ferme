@@ -5,6 +5,6 @@ export const fetchData = async (url) => {
     const resp = await axios.get(url);
     return resp.data.MRData;
   } catch (error) {
-    console.log(`There is an error: ${error}`);
+    console.log(`There was an error: ${error}`);
   }
 };

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { fetchData } from '../utils/helpers';
-import { CURRENT_DRIVERS_STND_URL, DRIVER_INFO_URL } from '../utils/constants';
+import { CURRENT_DRIVERS_STND_URL } from '../utils/constants';
 
 const DriversContext = createContext();
 

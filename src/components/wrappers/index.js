@@ -9,6 +9,8 @@ import ShowMoreWrapper from './ShowMoreWrapper';
 import DriverPageWrapper from './DriverPageWrapper';
 import BioWrapper from './BioWrapper';
 import ConstructorWrapper from './ConstructorWrapper';
+import ChartWrapper from './ChartWrapper';
+import CareerInfoWrapper from './CareerInfoWrapper';
 
 export {
   LoadingWrapper,
@@ -22,4 +24,6 @@ export {
   DriverPageWrapper,
   BioWrapper,
   ConstructorWrapper,
+  ChartWrapper,
+  CareerInfoWrapper,
 };
